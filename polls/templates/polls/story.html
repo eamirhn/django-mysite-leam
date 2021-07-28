@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{%block title%}
+{{storydata.title}}
+{%endblock title%}
+
+{%block content%}
+<div class="eamirh">
+
+        {% if user in storydata.likes.all %}
+        <a href="{% url 'polls:storyunlike' storydata.id %}" style="color: rgb(136, 27, 27);">UNLIKE</a>
+        {%else%}
+         <a href="{% url 'polls:storylike' storydata.id %}" style="color: green;">LIKE</a><br>
+       
+    {%endif%}
+        <h3>{{storydata.story}}</h3>
+
+    {% if storydata.image%}
+    
+    
+<img src='{{storydata.image.url}}' width="800" height="auto">
+    {% endif %}
+    
+    <p>{{ storydata.date}}</p>
+    <h5>{{storydata.author}}</h5>
+    </div>
+
+{%endblock content%}
+
+ 

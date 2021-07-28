@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block title%}Home Page{%endblock title%}
+
+{%block content%}
+
+
+{%if user.is_authenticated%}   
+<form action="{%url 'accounts:logoutView'%}" method="POST"> <!-- this will look throgh url files and finds the path
+with the app name accounts and then find logoutView (name attribute) and excute the function-->
+{%csrf_token%}
+    <button type="submit">LOG OUT</button>
+</form>
+{%endif%}
+
+{%endblock content%}
+
+

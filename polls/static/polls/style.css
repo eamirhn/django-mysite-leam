@@ -1,0 +1,21 @@
+* {
+padding: 54;
+margin: 21;
+box-sizing: border-box;
+color: rgba(38, 79, 114, 0.692);
+
+}
+a {
+color: rgb(173, 57, 96);
+text-decoration: none;
+}
+
+
+.eamirh {
+
+    justify-content: left;
+}
+.footer_m{
+color: brown;
+
+}

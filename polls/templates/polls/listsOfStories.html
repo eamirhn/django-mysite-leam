@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block title%}LISTS{%endblock title%}
+
+{%block content%}
+<div class="container eamirh">
+    <div class="row row-cols-auto">
+        {% for story in lists %}
+        <div class="col">
+
+            <div class="card" style="width: 18rem;">
+{%if story.image%}
+<a href="{% url 'polls:story_datail' story.id %}">
+   <img src="{{story.image.url}}" class="card-img-top" alt="..."></a>
+    {%endif%}
+    <div class="card-body">
+      <h5 class="card-title">{{ story.title }}</h5>
+      <p class="card-text">{{ story.getsnippet }}</p>
+      <h6>{{story.author}}</h6>
+      <a href="{% url 'polls:story_datail' story.id %}" class="btn btn-primary">Datail Page</a>
+    </div>
+  </div>
+        </div>
+
+
+{%endfor%}
+</div>
+</div>
+{%endblock content%}
+
